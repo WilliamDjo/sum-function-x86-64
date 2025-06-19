@@ -26,7 +26,7 @@ loop_end:
 	jmp done
 
 return_zero:
-	mov eax, 0
+	mov rax, 0
 
 done:
 	pop rbp	
