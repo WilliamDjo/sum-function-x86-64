@@ -34,17 +34,17 @@ sum_to_n:
     push rbp            ; Function prologue
     mov rbp, rsp        ; Set up stack frame
 
-    cmp edi, 0          ; Check if n <= 0
+    cmp rdi, 0          ; Check if n <= 0
     jle return_zero     ; Return 0 for invalid input
 
-    mov eax, 0          ; sum = 0
-    mov ecx, 1          ; counter = 1
+    mov rax, 0          ; sum = 0
+    mov rcx, 1          ; counter = 1
 
 loop_start:
-    cmp ecx, edi        ; Compare counter with n
+    cmp rcx, rdi        ; Compare counter with n
     jg loop_end         ; Exit if counter > n
-    add eax, ecx        ; sum += counter
-    inc ecx             ; counter++
+    add rax, rcx        ; sum += counter
+    inc rcx             ; counter++
     jmp loop_start      ; Continue loop
 
 loop_end:
@@ -54,7 +54,7 @@ loop_end:
 
 ## Key Concepts Demonstrated
 
-- **Function calling conventions**: Parameter in `edi`, return value in `eax`
+- **Function calling conventions**: Parameter in `rdi`, return value in `rax`
 - **Stack frame management**: `push rbp; mov rbp, rsp` setup
 - **Loop implementation**: Using labels, conditional jumps, and unconditional jumps
 - **Register usage**: Different registers for different purposes
