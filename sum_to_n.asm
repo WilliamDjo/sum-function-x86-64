@@ -13,7 +13,7 @@ sum_to_n:
 	mov rcx, 1	; counter
 
 loop_start:
-	cmp rcx, edi
+	cmp rcx, rdi
 	jg loop_end	; if counter > n, exit loop
 	
 	add rax, rcx	; sum = sum + counter
